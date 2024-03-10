@@ -1,0 +1,35 @@
+//Here's a very basic example of Swift code using Stripe for processing payments
+//Code from Chatgpt 
+// PLease Read READme file :) 
+
+// HAVE FUN - DANIEL 
+
+import UIKit
+import Stripe
+
+class PaymentViewController: UIViewController, STPPaymentCardTextFieldDelegate {
+    
+    var paymentTextField: STPPaymentCardTextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        paymentTextField = STPPaymentCardTextField()
+        paymentTextField.delegate = self
+        view.addSubview(paymentTextField)
+        
+        // Add additional UI elements as needed (e.g., buttons for submitting payment)
+    }
+    
+    // MARK: - STPPaymentCardTextFieldDelegate
+    
+    func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
+        // Update UI based on card details entered by the user
+    }
+    
+    func paymentCardTextFieldDidEndEditing(_ textField: STPPaymentCardTextField) {
+        // Validate card details and handle any errors
+    }
+    
+    // Implement additional methods for handling payment submission, etc.
+}
